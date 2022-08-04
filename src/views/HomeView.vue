@@ -74,16 +74,16 @@ export default {
             <input type="text" v-model="newMovieParams.title" />
           </h6>
           <h6>
+            Director:
+            <input type="text" v-model="newMovieParams.director" />
+          </h6>
+          <h6>
             Year:
             <input type="text" v-model="newMovieParams.year" />
           </h6>
           <h6>
             Plot:
             <input type="text" v-model="newMovieParams.plot" />
-          </h6>
-          <h6>
-            Director:
-            <input type="text" v-model="newMovieParams.director" />
           </h6>
           <button v-on:click="this.createMovie()">Create</button>
           <button>Close</button>
@@ -106,16 +106,16 @@ export default {
           <input type="text" v-model="editMovieParams.title" />
         </h6>
         <h6>
+          Director:
+          <input type="text" v-model="editMovieParams.director" />
+        </h6>
+        <h6>
           Year:
           <input type="text" v-model="editMovieParams.year" />
         </h6>
         <h6>
           Plot:
           <input type="text" v-model="editMovieParams.plot" />
-        </h6>
-        <h6>
-          Director:
-          <input type="text" v-model="editMovieParams.director" />
         </h6>
         <button v-on:click="updateMovie(currentMovie)">Update</button>
         <button v-on:click="destroyMovie(currentMovie)">Delete</button>
