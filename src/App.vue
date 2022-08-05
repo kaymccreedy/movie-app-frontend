@@ -1,8 +1,33 @@
+<script>
+export default {
+  data: function () {
+    return {
+      loggedIn: "",
+    };
+  },
+  watch: {
+    $route: function () {
+      this.loggedIn = !!localStorage.jwt;
+    },
+  },
+};
+</script>
+
 <template>
   <nav>
     <router-link to="/">Home</router-link>
     |
     <router-link to="/movies">Movies</router-link>
+    <div class="small">
+      <div v-if="!loggedIn">
+        <router-link to="/login">Login</router-link>
+        |
+        <router-link to="/signup">Signup</router-link>
+      </div>
+      <div v-if="loggedIn">
+        <router-link to="/logout">Logout</router-link>
+      </div>
+    </div>
   </nav>
   <router-view />
 </template>
@@ -38,5 +63,9 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.small {
+  font-size: small;
 }
 </style>
